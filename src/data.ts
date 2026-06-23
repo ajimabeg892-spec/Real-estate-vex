@@ -3,77 +3,77 @@ import { Property, Service, Stat, Testimonial } from './types';
 export const PROPERTIES: Property[] = [
   {
     id: 'prop-1',
-    title: 'The Obsidian Canopy',
-    location: 'Pacific Palisades, CA',
-    price: '$18,450,000',
-    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80',
-    beds: 5,
-    baths: 6.5,
-    sqft: 8200,
-    tag: 'Architectural Masterpiece',
-    description: 'A cantilevered steel-and-glass pavilion floating above the canyon, framing endless ocean views with dramatic floor-to-ceiling glass screens.'
+    title: 'The Gold Crest Plots',
+    location: 'Sector 150, Noida',
+    price: '₹1.25 Crore onwards',
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80',
+    beds: 0,
+    baths: 0,
+    sqft: 2250, // 250 Sq Yd
+    tag: 'Premium Freehold Plots',
+    description: 'Bespoke freehold residential plots in Sector 150, Noida. Designed with wide arterial roads, deep landscape buffers, high security, and high appreciation lanes.'
   },
   {
     id: 'prop-2',
-    title: 'Minimalist Monolith Suite',
-    location: 'Aspen, CO',
-    price: '$14,200,000',
+    title: 'The Whispering Farmhouses',
+    location: 'Greater Noida Expressway',
+    price: '₹2.80 Crore',
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
     beds: 4,
-    baths: 4,
-    sqft: 6100,
-    tag: 'Alpine Luxury',
-    description: 'Engineered into the mountain granite, integrating hand-hammered concrete surfaces, direct ski-in access, and custom geothermal thermal chambers.'
+    baths: 4.5,
+    sqft: 9000, // 1000 Sq Yd
+    tag: 'Farmhouse Projects',
+    description: 'An elite reserve of pre-curated green estate blocks. Each comes with custom perimeter trees, smart soil management, deep water connections, and customized retreat houses.'
   },
   {
     id: 'prop-3',
-    title: 'Aether Water Pavilion',
-    location: 'Miami, FL',
-    price: '$22,500,000',
+    title: 'Aether Brick Boulevard',
+    location: 'Delhi NCR, Yamuna Expressway',
+    price: '₹12,500 per sq yd',
     image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
-    beds: 6,
-    baths: 8,
-    sqft: 10400,
-    tag: 'Oceanfront Estate',
-    description: 'Featuring dynamic over-water bridges, 360-degree glass partitions, and a massive dual-level infinity pool that blends seamlessly into the ocean skyline.'
+    beds: 0,
+    baths: 0,
+    sqft: 4500, // 500 Sq Yd
+    tag: 'Strategic Land Investment',
+    description: 'Premium freehold land plots situated near the upcoming Noida International Airport. High liquidity, rapid developmental trajectory, and immediate registry options.'
   },
   {
     id: 'prop-4',
-    title: 'The Concrete Canopy',
-    location: 'Austin, TX',
-    price: '$8,950,000',
+    title: 'Royal Brick Horizon Suites',
+    location: 'Sector 143, Noida',
+    price: '₹85 Lakhs',
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
-    beds: 4,
-    baths: 5,
-    sqft: 5800,
-    tag: 'Brutalist Retreat',
-    description: 'Surrounded by mature live oaks, this home uses structural raw board-formed concrete and structural glass channels to merge pure geometry with nature.'
+    beds: 3,
+    baths: 3,
+    sqft: 1850,
+    tag: 'Residential Apartments',
+    description: 'Exquisite ultra-premium apartments featuring expansive private sun-decks, integrated smart lighting controls, modular Italian layouts, and continuous security.'
   }
 ];
 
 export const SERVICES: Service[] = [
   {
     id: 'service-1',
-    title: 'Property Acquisition',
-    description: 'Uncovering off-market architectural masterpieces and negotiating high-value acquisitions with absolute confidentiality.',
+    title: 'Premium Freehold Plots',
+    description: 'Exclusive, highly appreciated freehold land packages inside secured premium clusters in Noida and Greater Noida with immediate registry.',
     iconName: 'Compass'
   },
   {
     id: 'service-2',
-    title: 'Venture Selling',
-    description: 'Curation of immersive visual narratives, digital staging, and premium placement to appeal to global ultra-high-net-worth investors.',
+    title: 'Farmhouse Projects',
+    description: 'Elite layout planning, terrain sculpting, and customized development of sprawling luxury farmhouses and rural retreat estates in scenic margins of Delhi NCR.',
     iconName: 'ArrowUpRight'
   },
   {
     id: 'service-3',
-    title: 'Portfolio Advisory',
-    description: 'Strategic deployment of capital into premium real estate and high-yielding boutique developments across major global metros.',
+    title: 'Residential Apartments',
+    description: 'Curated premium high-rise residences and custom luxury builder floors with high-end specifications and top-tier amenities.',
     iconName: 'TrendingUp'
   },
   {
     id: 'service-4',
-    title: 'Asset Governance',
-    description: 'Flawless preservation, passive yield generation, security, and administrative oversight of your prime physical asset base.',
+    title: 'Land Investment',
+    description: 'Strategic market research, bulk plot acquisitions, and reliable legal advisory to secure high-yield land parcels near high-growth transport hubs.',
     iconName: 'Shield'
   }
 ];
@@ -81,56 +81,57 @@ export const SERVICES: Service[] = [
 export const STATS: Stat[] = [
   {
     id: 'stat-1',
-    value: 500,
+    value: 1200,
     suffix: '+',
-    label: 'Managed Assets'
+    label: 'Acres Developed'
   },
   {
     id: 'stat-2',
-    value: 300,
+    value: 2500,
     suffix: '+',
-    label: 'Exclusive Clients'
+    label: 'Happy Investors'
   },
   {
     id: 'stat-3',
-    value: 10,
+    value: 12,
     suffix: '+',
-    label: 'Years of Vision'
+    label: 'Years of Trust'
   },
   {
     id: 'stat-4',
-    value: 4.8,
-    suffix: 'B',
-    label: 'Total Transaction Volume'
+    value: 950,
+    suffix: 'Cr+',
+    label: 'Portfolio Valuation'
   }
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 'test-1',
-    name: 'Helena Sterling',
-    role: 'Principal Architect',
-    company: 'Sterling & Co.',
-    content: 'VEX approaches real estate as high art. Their level of service is comparable to none; they did not just list our residential sculpture, they framed it in the correct visual language to target curators, not mere buyers.',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80',
-    rating: 5
-  },
-  {
-    id: 'test-2',
-    name: 'Marcus Vance',
-    role: 'Managing Partner',
-    company: 'Vance Capital',
-    content: 'The advisory arm is exceptional. They navigated a highly complex off-market portfolio transition in Beverly Hills with flawless efficiency and absolute privacy. Highly professional advisors.',
+    name: 'Rajesh Malhotra',
+    role: 'Managing Director',
+    company: 'Malhotra Group',
+    content: 'MY FIRSTBRICK INFRA approaches land investment with absolute transparency. Their level of legal diligence is exceptional; they did not just show us a plot, they guaranteed title security and smooth registries in Sector 150.',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80',
     rating: 5
   },
   {
+    id: 'test-2',
+    name: 'Dr. Ananya Sharma',
+    role: 'Senior Consultant',
+    company: 'Max Healthcare',
+    content: 'Acquiring an elite farmhouse plot in Delhi NCR was completely transparent. Under MY FIRSTBRICK INFRA’s expert guidance, every milestone of registry and power deployment was executed ahead of schedule.',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80',
+    rating: 5
+  },
+  {
     id: 'test-3',
-    name: 'Sofia Chevalier',
-    role: 'Creative Director',
-    company: 'Aether Collective',
-    content: 'Buying a property in Aspen was completely friction-free. They handled everything from physical architectural validation to high-level trust setups. A rare team with immaculate taste.',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=150&q=80',
+    name: 'Amit Chaudhary',
+    role: 'NRI Investor',
+    company: 'Chaudhary Capital UK',
+    content: 'Superb advisory. They helped me structure my land investment near Noida International Airport Expressway with extreme precision. The appreciation potential here is truly massive.',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150&q=80',
     rating: 5
   }
 ];
+

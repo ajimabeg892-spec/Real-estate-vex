@@ -57,11 +57,11 @@ export function Preloader({ isVideoReady, onAnimationComplete }: PreloaderProps)
       <div className="flex flex-col items-center max-w-sm w-full px-8 space-y-8">
         {/* Brand visual logotype */}
         <div className="flex flex-col items-center space-y-1">
-          <div className="text-4xl font-semibold tracking-[0.2em] text-white overflow-hidden">
-            <span className="block animate-pulse">VEX</span>
+          <div className="text-2xl font-sans font-extrabold tracking-[0.1em] text-orange-500 overflow-hidden text-center">
+            <span className="block animate-pulse">MY FIRSTBRICK INFRA</span>
           </div>
-          <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500 font-mono font-light">
-            Legacy Real Estate
+          <span className="text-[10px] uppercase tracking-[0.25em] text-gray-500 font-mono font-light text-center">
+            INVEST IN LAND, BUILD WEALTH
           </span>
         </div>
 

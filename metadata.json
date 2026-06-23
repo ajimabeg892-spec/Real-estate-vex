@@ -1,6 +1,6 @@
 {
-  "name": "VEX",
-  "description": "High-fidelity, responsive landing page for VEX featuring a real-time character-by-character animated hero section, a customized liquid glass menu, and a full-screen, raw background video.",
+  "name": "MY FIRSTBRICK INFRA",
+  "description": "High-fidelity website for MY FIRSTBRICK INFRA featuring premium freehold plots, farmhouses and land investments in Noida, Greater Noida and Delhi NCR.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

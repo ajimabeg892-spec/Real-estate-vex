@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Logo } from './Logo';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,10 +44,9 @@ export function Navbar() {
         {/* Brand Name Logo */}
         <div 
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
-          className="text-xl md:text-2xl font-semibold tracking-tight cursor-pointer flex items-center gap-2"
+          className="cursor-pointer"
         >
-          <span className="text-white">REAL ESTATE</span>
-          <span className="text-xs bg-white/10 border border-white/20 text-gray-300 px-1.5 py-0.5 rounded font-mono font-light">VEX</span>
+          <Logo variant="horizontal" size={38} className="hover:opacity-90 active:scale-95 transition-all duration-300" />
         </div>
 
         {/* Navigation Links */}

@@ -63,22 +63,34 @@ export function AboutSection() {
             }`}
           >
             <p className="text-lg md:text-xl text-gray-300 font-light leading-relaxed">
-              VEX has spent over a decade shifting the boundary of luxury real estate representation. We believe that a high-end estate is not merely glass, steel, and concrete—it is a physical legacy, a tangible extension of artistic vision.
+              Founded and led by premier property strategist and developer <strong>Rohan Sharma</strong>, <strong>MY FIRSTBRICK INFRA</strong> provides premium real estate investment opportunities including freehold plots, farmhouses, and residential projects in Noida, Greater Noida, and Delhi NCR.
             </p>
             
             <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed">
-              We operate exclusively at the intersection of architectural genius and deep-market capital intelligence. From off-market brutalist residences overlooking canyon lines to sprawling glass coastal shelters, our team works with precision, privacy, and absolute visual integrity.
+              Our core focus is delivering highly trusted property solutions, transparent dealings, and premium land parcels with rapid appreciation potential. Under Rohan Sharma's expert stewardship, we bridge the gap between high-yield investment structures and absolute legal trust, securing pristine assets for modern collectors.
             </p>
 
             {/* Subtle Signature List Block */}
-            <div className="grid grid-cols-2 gap-6 pt-6">
-              <div className="border-l border-white/20 pl-4">
-                <h4 className="text-sm font-medium text-white mb-1">Tailored Portfolios</h4>
-                <p className="text-xs text-gray-400 font-light leading-relaxed">Structured exclusively for legacy trust and global asset positioning.</p>
+            <div className="grid grid-cols-2 gap-6 py-4">
+              <div className="border-l border-orange-500/40 pl-4">
+                <h4 className="text-sm font-medium text-white mb-1">Transparent Registry</h4>
+                <p className="text-xs text-gray-400 font-light leading-relaxed">Fully secure freehold titles, verified registries, and transparent, clear-cut pricing channels.</p>
               </div>
-              <div className="border-l border-white/20 pl-4">
-                <h4 className="text-sm font-medium text-white mb-1">Zero Mass Marketing</h4>
-                <p className="text-xs text-gray-400 font-light leading-relaxed">Discreet placement channels directly linked with qualified modern collectors.</p>
+              <div className="border-l border-orange-500/40 pl-4">
+                <h4 className="text-sm font-medium text-white mb-1">Appreciation Nodes</h4>
+                <p className="text-xs text-gray-400 font-light leading-relaxed">Pristine plots strategically selected in Noida &amp; Greater Noida expansion sectors.</p>
+              </div>
+            </div>
+
+            {/* Elegant Founder Signoff */}
+            <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span className="text-[10px] uppercase tracking-widest text-[#D85924] font-mono block mb-1">FOUNDER &amp; OWNER</span>
+                <span className="text-lg font-serif font-semibold text-white tracking-wide">Rohan Sharma</span>
+                <span className="text-xs text-gray-400 block font-light">Principal Developer &amp; Property Specialist</span>
+              </div>
+              <div className="italic text-gray-400 font-serif text-sm border-l border-white/10 pl-4 py-1 max-w-[320px] leading-relaxed">
+                "We don't just sell plots; we build wealth. Every brick, every coordinate represents a legacy for generations."
               </div>
             </div>
           </div>
@@ -104,8 +116,8 @@ export function AboutSection() {
                 
                 {/* Embedded luxury caption overlay */}
                 <div className="absolute bottom-6 left-6 right-6 p-4 bg-black/60 backdrop-blur-md rounded-xl border border-white/10">
-                  <span className="text-[10px] uppercase tracking-widest text-gray-400 font-mono block mb-1">CURATED FOCUS</span>
-                  <span className="text-sm font-light text-white">VEX Design Suite No. 4, California</span>
+                  <span className="text-[10px] uppercase tracking-widest text-orange-400 font-mono block mb-1">CURATED FOCUS</span>
+                  <span className="text-sm font-light text-white">Lush Green Farmhouse Site, Greater Noida</span>
                 </div>
               </div>
             </div>

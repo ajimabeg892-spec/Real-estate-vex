@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Globe, Instagram, Facebook, Twitter, ArrowUpRight } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { AnimatedHeading } from './components/AnimatedHeading';
 import { FadeIn } from './components/FadeIn';
 import { Navbar } from './components/Navbar';
@@ -11,6 +12,7 @@ import { StatsCounter } from './components/StatsCounter';
 import { TestimonialCarousel } from './components/TestimonialCarousel';
 import { ContactSection } from './components/ContactSection';
 import { Preloader } from './components/Preloader';
+import { Logo } from './components/Logo';
 import { PROPERTIES, STATS } from './data';
 import { Property } from './types';
 
@@ -18,6 +20,39 @@ export default function App() {
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
   const [isVideoReady, setIsVideoReady] = useState(false);
   const [isPreloaderComplete, setIsPreloaderComplete] = useState(false);
+
+  // Track page scroll coordinates for high-fidelity animations
+  const { scrollY } = useScroll();
+
+  // Subtly fade out and shift up the hero elements as the user scrolls down
+  const heroOpacity = useTransform(scrollY, [0, 450], [1, 0]);
+  const heroTranslateY = useTransform(scrollY, [0, 450], [0, -60]);
+  const tagY = useTransform(scrollY, [0, 450], [0, -30]);
+
+  // Framer Motion variants for stagger scroll entrances
+  const heroContainerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.25,
+        delayChildren: 0.2,
+      }
+    }
+  };
+
+  const heroItemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 24,
+        stiffness: 90,
+      }
+    }
+  };
 
   // Safety timeout fallback (4.5 seconds maximum waiting time for slow video loads)
   useEffect(() => {
@@ -66,58 +101,74 @@ export default function App() {
           onLoadedData={() => setIsVideoReady(true)}
         />
         
-        {/* Content Box Overlay sitting securely on top of z-0 Video */}
-        <div className="relative z-10 w-full px-6 md:px-12 lg:px-16 flex flex-col justify-end mt-auto h-full">
+        {/* Content Box Overlay sitting securely on top of z-0 Video with parallax scroll effect */}
+        <motion.div 
+          style={{ opacity: heroOpacity, y: heroTranslateY }}
+          className="relative z-10 w-full px-6 md:px-12 lg:px-16 flex flex-col justify-end mt-auto h-full"
+        >
           <div className="w-full lg:grid lg:grid-cols-2 lg:items-end gap-10">
             
-            {/* Left Column - Headline details */}
-            <div className="flex flex-col items-start">
+            {/* Left Column - Headline details with scroll-based staggered entrance */}
+            <motion.div 
+              variants={heroContainerVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.15 }}
+              className="flex flex-col items-start"
+            >
               {/* Heading with Inter, text sizes, letter-spacing, and character staggered animations */}
-              <AnimatedHeading
-                text={"Shaping tomorrow\nwith vision and action."}
-                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal mb-4 leading-[1.08] text-white"
-              />
+              <motion.div variants={heroItemVariants} className="w-full">
+                <AnimatedHeading
+                  text={"Invest in Land,\nBuild Wealth."}
+                  className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 leading-[1.08] text-white"
+                />
+              </motion.div>
               
-              {/* Subheading fade-in wrapper starts at 800ms offset */}
-              <FadeIn delay={800} duration={1000}>
+              {/* Subheading with slight delay */}
+              <motion.div variants={heroItemVariants} className="w-full">
                 <p className="text-base md:text-lg text-gray-300 mb-5 max-w-lg leading-relaxed font-normal">
-                  We back visionaries and craft ventures that define what comes next.
+                  Premium freehold plots, luxurious farmhouse retreats, and high-appreciation residential land investment opportunities in Noida, Greater Noida, and Delhi NCR.
                 </p>
-              </FadeIn>
+              </motion.div>
               
-              {/* Buttons row fade-in wrapper starts at 1200ms offset */}
-              <FadeIn delay={1200} duration={1000}>
+              {/* Buttons with additional delay */}
+              <motion.div variants={heroItemVariants} className="w-full">
                 <div className="flex flex-wrap gap-4">
                   <button 
                     onClick={() => scrollToSection('contact')}
-                    className="bg-white text-black px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200 cursor-pointer text-sm md:text-base active:scale-95"
+                    className="bg-[#D85924] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#c44e1e] transition-colors duration-200 cursor-pointer text-sm md:text-base active:scale-95 shadow-lg"
                   >
-                    Start a Chat
+                    Book Site Visit
                   </button>
                   
                   <button 
                     onClick={() => scrollToSection('properties')}
                     className="liquid-glass border border-white/20 text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-black transition-all duration-300 cursor-pointer text-sm md:text-base active:scale-95"
                   >
-                    Explore Now
+                    Get Property Details
                   </button>
                 </div>
-              </FadeIn>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            {/* Right Column - Luxury Tag block aligned at bottom right */}
-            <div className="flex items-end justify-start lg:justify-end mt-8 lg:mt-0">
-              <FadeIn delay={1400} duration={1000}>
-                <div className="liquid-glass border border-white/20 px-6 py-3 rounded-xl">
-                  <span className="text-lg md:text-xl lg:text-2xl font-light tracking-wide text-white">
-                    Investing. Building. Advisory.
-                  </span>
-                </div>
-              </FadeIn>
-            </div>
+            {/* Right Column - Luxury Tag block aligned at bottom right, responding to scroll */}
+            <motion.div 
+              style={{ y: tagY }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false, amount: 0.15 }}
+              transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
+              className="flex items-end justify-start lg:justify-end mt-8 lg:mt-0"
+            >
+              <div className="liquid-glass border border-white/20 px-6 py-3 rounded-xl">
+                <span className="text-lg md:text-xl lg:text-2xl font-light tracking-wide text-white">
+                  Noida • Greater Noida • Delhi NCR
+                </span>
+              </div>
+            </motion.div>
 
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* 3. FEATURED PROPERTIES SECTION */}
@@ -126,7 +177,7 @@ export default function App() {
           {/* Section Heading info */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="space-y-2">
-              <span className="text-xs uppercase tracking-[0.2em] font-medium text-gray-400 block">
+              <span className="text-xs uppercase tracking-[0.2em] font-medium text-orange-400 block">
                 PRIME PORTFOLIO EXCLUSIVES
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-white">
@@ -134,18 +185,29 @@ export default function App() {
               </h2>
             </div>
             <p className="max-w-md text-sm text-gray-400 font-light leading-relaxed">
-              Curated brutalist structures, luxury coastal pavilions, and architectural statements representing prime capital valuations.
+              Premium land developments, pre-designed luxury farmhouse plots, and direct high-rise residential properties representing pristine trust and appreciation.
             </p>
           </div>
 
           {/* Properties Grid Column */}
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-            {PROPERTIES.map((property) => (
-              <PropertyCard
+            {PROPERTIES.map((property, idx) => (
+              <motion.div
                 key={property.id}
-                property={property}
-                onSelect={setSelectedProperty}
-              />
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: idx * 0.15, 
+                  ease: [0.16, 1, 0.3, 1] 
+                }}
+              >
+                <PropertyCard
+                  property={property}
+                  onSelect={setSelectedProperty}
+                />
+              </motion.div>
             ))}
           </div>
         </div>
@@ -165,10 +227,10 @@ export default function App() {
               VALUATION RECORD
             </span>
             <h2 className="text-3xl md:text-4xl font-light tracking-tight text-white mb-4">
-              VEX by the Numbers
+              MY FIRSTBRICK INFRA by the Numbers
             </h2>
             <p className="text-sm text-gray-400 font-light leading-relaxed">
-              Our market authority is proven through unmatched portfolio metrics, private transaction speeds, and asset growth records.
+              Our market trust is proven through unmatched area metrics, secure direct land registries, and 100% transparent pricing models.
             </p>
           </div>
 
@@ -210,28 +272,28 @@ export default function App() {
         <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.04),transparent_50%)] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto text-center relative z-10 space-y-8">
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.25em] font-medium text-gray-300 bg-white/5 border border-white/10 px-3 py-1 rounded inline-block">
-            ACQUISITION CHANNEL NOW OPEN
+          <span className="text-[10px] md:text-xs uppercase tracking-[0.25em] font-medium text-white bg-orange-600 border border-orange-500 px-3 py-1 rounded inline-block">
+            INVEST IN LAND, BUILD WEALTH
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white max-w-3xl mx-auto leading-tight">
-            Find Your Dream Property Today
+            Build Your Legacy Brick By Brick
           </h2>
           <p className="text-base md:text-lg text-gray-300 font-light max-w-xl mx-auto leading-relaxed">
-            Our exclusive list of off-market residences and luxury modernist pavilions across major global corridors is fully active.
+            Our premium freehold land packages and modular farmhouse site schedules inside scenic expansions are fully active.
           </p>
           
           <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
             <button 
               onClick={() => scrollToSection('contact')}
-              className="bg-white hover:bg-gray-100 text-black font-semibold px-8 py-4 rounded-xl text-sm transition-all duration-300 cursor-pointer shadow-lg w-full sm:w-auto active:scale-95"
+              className="bg-[#D85924] hover:bg-[#c44e1e] text-white font-semibold px-8 py-4 rounded-xl text-sm transition-all duration-300 cursor-pointer shadow-lg w-full sm:w-auto active:scale-95"
             >
-              Request Discrete Call
+              Book Site Visit
             </button>
             <button 
               onClick={() => scrollToSection('properties')}
               className="liquid-glass border border-white/20 hover:bg-white hover:text-black font-semibold text-white px-8 py-4 rounded-xl text-sm transition-all duration-300 cursor-pointer w-full sm:w-auto active:scale-95"
             >
-              Browse Active Assets
+              Get Property Details
             </button>
           </div>
         </div>
@@ -246,11 +308,11 @@ export default function App() {
           
           {/* Logo & Slogan Column */}
           <div className="space-y-4">
-            <div className="text-2xl font-semibold tracking-tight">
-              REAL ESTATE <span className="text-xs bg-white/10 border border-white/20 text-gray-300 px-1.5 py-0.5 rounded font-mono font-light ml-1">VEX</span>
+            <div className="flex items-center">
+              <Logo variant="horizontal" size={42} className="hover:opacity-95" />
             </div>
             <p className="text-sm text-gray-400 font-light leading-relaxed">
-              Pioneering custom acquisition structures, brutalist concrete luxury investments, and premium global advisory for modern real estate collectors.
+              MY FIRSTBRICK INFRA • Build Legacy Brick By Brick. Noida, Greater Noida, and Delhi NCR's trusted freehold plots and luxury real estate developers.
             </p>
           </div>
 
@@ -273,12 +335,12 @@ export default function App() {
 
           {/* Secure Services Sub-list */}
           <div>
-            <h3 className="text-xs uppercase tracking-wider font-semibold text-gray-400 mb-4">Tactical Operations</h3>
+            <h3 className="text-xs uppercase tracking-wider font-semibold text-gray-400 mb-4">Investment Sectors</h3>
             <ul className="space-y-2.5 text-sm text-gray-400 font-light">
-              <li><div className="hover:text-white transition-colors">Residential Curations</div></li>
-              <li><div className="hover:text-white transition-colors">Off-Market Acquisitions</div></li>
-              <li><div className="hover:text-white transition-colors">Tax Haven Real Location</div></li>
-              <li><div className="hover:text-white transition-colors">Legatorial Estate Curation</div></li>
+              <li><div className="hover:text-white transition-colors">Premium Freehold Plots</div></li>
+              <li><div className="hover:text-white transition-colors">Farmhouse Developments</div></li>
+              <li><div className="hover:text-white transition-colors">Residential Apartments</div></li>
+              <li><div className="hover:text-white transition-colors">Strategic Land Investment</div></li>
             </ul>
           </div>
 
@@ -287,11 +349,11 @@ export default function App() {
             <h3 className="text-xs uppercase tracking-wider font-semibold text-gray-400 mb-4">Secure Coordinates</h3>
             <div className="flex items-center gap-3 text-sm text-gray-400 font-light">
               <Mail className="w-4 h-4" />
-              <span>associate@vexrealestate.com</span>
+              <span>associate@rsrealestate.com</span>
             </div>
             <div className="flex items-center gap-3 text-sm text-gray-400 font-light">
               <Phone className="w-4 h-4" />
-              <span>+1 (310) 555-0199</span>
+              <span>+91 9220436321</span>
             </div>
             
             {/* Social icons */}
@@ -308,7 +370,7 @@ export default function App() {
         {/* copyright and credentials */}
         <div className="max-w-7xl mx-auto border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 font-light gap-4">
           <div>
-            &copy; {new Date().getFullYear()} VEX Real Estate Group. All Rights Reserved. Private Trust Protected.
+            &copy; {new Date().getFullYear()} MY FIRSTBRICK INFRA. All Rights Reserved. Private Trust Protected.
           </div>
           <div className="flex items-center gap-6">
             <a href="#terms" className="hover:text-white transition-colors">Terms of Briefing</a>

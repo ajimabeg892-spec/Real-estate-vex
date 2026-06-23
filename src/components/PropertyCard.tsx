@@ -66,17 +66,33 @@ export function PropertyCard({ property, onSelect }: PropertyCardProps) {
 
         {/* Real Estate Specifications */}
         <div className="border-t border-white/10 pt-4 flex items-center justify-between text-gray-300">
+          {property.beds > 0 ? (
+            <>
+              <div className="flex items-center gap-1.5">
+                <BedDouble className="w-4 h-4 text-orange-500/80" />
+                <span className="text-xs font-mono">{property.beds} <span className="text-gray-500 text-[10px]">BDS</span></span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Bath className="w-4 h-4 text-orange-500/80" />
+                <span className="text-xs font-mono">{property.baths} <span className="text-gray-500 text-[10px]">BA</span></span>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[10px] bg-orange-500/10 border border-orange-500/20 text-orange-400 px-1.5 py-0.5 rounded font-mono font-medium">FREEHOLD</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[10px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded font-mono font-medium">READY REGISTRY</span>
+              </div>
+            </>
+          )}
           <div className="flex items-center gap-1.5">
-            <BedDouble className="w-4 h-4 text-gray-400" />
-            <span className="text-xs font-mono">{property.beds} <span className="text-gray-500 text-[10px]">BDS</span></span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <Bath className="w-4 h-4 text-gray-400" />
-            <span className="text-xs font-mono">{property.baths} <span className="text-gray-500 text-[10px]">BA</span></span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <Square className="w-4 h-4 text-gray-400" />
-            <span className="text-xs font-mono">{property.sqft.toLocaleString()} <span className="text-gray-500 text-[10px]">SQFT</span></span>
+            <Square className="w-4 h-4 text-orange-500/80" />
+            <span className="text-xs font-mono">
+              {Math.round(property.sqft / 9)} <span className="text-gray-500 text-[10px]">SQ YD</span>
+              <span className="text-gray-600 text-[9px] block">({property.sqft.toLocaleString()} SQFT)</span>
+            </span>
           </div>
         </div>
       </div>
