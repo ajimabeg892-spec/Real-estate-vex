@@ -7,15 +7,15 @@ interface LogoProps {
 }
 
 export function Logo({ variant = 'horizontal', className = '', size }: LogoProps) {
-  // Brick-orange signature color from the uploaded logo image
-  const brickOrange = "#D85924";
-  
-  // High-fidelity SVG logo element reflecting precise typography and visual structure of MY FIRSTBRICK INFRA
+  // Rich Gold gradient colors
+  const goldColor = "#D4AF37"; // Elegant Metallic Gold
+  const goldGradientId = "citihomez-gold-gradient";
+
   const renderBadge = () => {
-    // Large circle badge (exact match of uploaded layout)
+    // Beautiful circular crown/crest badge for Citihomez
     return (
       <div 
-        className={`flex items-center justify-center p-2 rounded-full bg-white border border-gray-200/50 shadow-lg select-none ${className}`}
+        className={`flex items-center justify-center p-2 rounded-full bg-black border-2 border-[#D4AF37]/50 shadow-2xl select-none ${className}`}
         style={{ width: size || 180, height: size || 180 }}
       >
         <svg
@@ -23,99 +23,101 @@ export function Logo({ variant = 'horizontal', className = '', size }: LogoProps
           className="w-full h-full"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Circular Container White Backdrop with a very subtle brick pattern */}
           <defs>
-            <pattern id="circle-brick-pattern" width="40" height="20" patternUnits="userSpaceOnUse">
-              <rect width="40" height="20" fill="transparent" />
-              <path d="M 0,0 L 40,0 M 0,10 L 40,10 M 20,0 L 20,10 M 0,10 L 0,20 M 40,10 L 40,20 M 10,10 L 10,20 M 30,10 L 30,20" 
-                    fill="none" stroke="#F1F5F9" strokeWidth="1" />
-            </pattern>
+            <linearGradient id={goldGradientId} x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#FFF2D4" />
+              <stop offset="30%" stopColor="#DFBA6B" />
+              <stop offset="50%" stopColor="#C59B3F" />
+              <stop offset="85%" stopColor="#EAD29A" />
+              <stop offset="100%" stopColor="#9C7323" />
+            </linearGradient>
           </defs>
           
-          <circle cx="200" cy="200" r="195" fill="url(#circle-brick-pattern)" />
-          <circle cx="200" cy="200" r="190" fill="none" stroke="#E2E8F0" strokeWidth="1" />
+          {/* Inner concentric gold rings */}
+          <circle cx="200" cy="200" r="185" fill="#0A0A0A" stroke="url(#citihomez-gold-gradient)" strokeWidth="2" />
+          <circle cx="200" cy="200" r="175" fill="none" stroke="url(#citihomez-gold-gradient)" strokeWidth="1" opacity="0.6" strokeDasharray="5,5" />
+          <circle cx="200" cy="200" r="170" fill="none" stroke="url(#citihomez-gold-gradient)" strokeWidth="1.5" />
           
-          {/* Logo graphics centered inside circular badge */}
-          <g transform="translate(15, 110)">
-            {/* The "MY 1" Orange Brick Badge */}
-            <g transform="translate(10, 20)">
-              {/* Outer Golden/Orange border line */}
-              <rect x="0" y="0" width="125" height="85" rx="16" fill="none" stroke={brickOrange} strokeWidth="3" />
-              
-              {/* Inner Solid Orange Rectangle with brick pattern background */}
-              <rect x="5" y="5" width="115" height="75" rx="12" fill={brickOrange} />
-              
-              {/* Double Lines/Brick lines inside orange box */}
-              <path d="M 15 35 L 110 35 M 15 55 L 110 55 M 40 5 L 40 35 M 80 5 L 80 35 M 60 35 L 60 55 M 30 55 L 30 80 M 85 55 L 85 80" 
-                    fill="none" stroke="#ffffff22" strokeWidth="1.5" />
-              
-              {/* "MY" White Text */}
-              <text x="50" y="55" fontFamily="system-ui, -apple-system, sans-serif" fontSize="42" fontWeight="900" fill="#FFFFFF" textAnchor="middle">MY</text>
-              
-              {/* "1" Subscript accent inside white badge frame */}
-              <text x="96" y="54" fontFamily="system-ui, -apple-system, sans-serif" fontSize="28" fontWeight="900" fill="#FDBA74" textAnchor="middle">1</text>
-            </g>
-
-            {/* "FIRSTBRICK INFRA" and "BUILD LEGACY" Text */}
-            <g transform="translate(150, 50)">
-              <text x="0" y="15" fontFamily="system-ui, -apple-system, sans-serif" fontSize="27" fontWeight="800" letterSpacing="0.2">
-                <tspan fill={brickOrange}>FIRSTBRICK</tspan>
-                <tspan fill="#1E293B"> INFRA</tspan>
-              </text>
-              
-              <text x="2" y="34" fontFamily="system-ui, -apple-system, sans-serif" fontSize="9.5" fontWeight="700" letterSpacing="1.2">
-                <tspan fill="#475569">BUILD LEGACY </tspan>
-                <tspan fill={brickOrange}>BRICK BY BRICK</tspan>
-              </text>
-              
-              {/* The stylized horizontal point/arrow shape on the right */}
-              <path d="M 245 4 L 300 4 L 315 14 L 300 24 L 245 24 Z" fill={brickOrange} />
-              <rect x="228" y="27" width="87" height="4" rx="2" fill="#1E293B" />
-            </g>
+          {/* Stylized Modern House / Crest Icon ("C" + House Architecture) */}
+          <g transform="translate(130, 95)" stroke="url(#citihomez-gold-gradient)" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
+            {/* Elegant Roof */}
+            <path d="M 20 60 L 70 20 L 120 60" strokeWidth="4" />
+            <path d="M 40 60 L 40 110 L 100 110 L 100 60" strokeWidth="3" />
+            {/* Distinct Inner C Arc */}
+            <path d="M 85 55 A 25 25 0 1 0 85 95" strokeWidth="4.5" />
+            {/* Small center window */}
+            <rect x="52" y="72" width="14" height="18" rx="1" />
           </g>
+
+          {/* Typography */}
+          <text
+            x="200"
+            y="265"
+            fontFamily="Georgia, serif"
+            fontSize="32"
+            fontWeight="bold"
+            letterSpacing="3"
+            fill="url(#citihomez-gold-gradient)"
+            textAnchor="middle"
+          >
+            CITIHOMEZ
+          </text>
+
+          <text
+            x="200"
+            y="298"
+            fontFamily="system-ui, -apple-system, sans-serif"
+            fontSize="9"
+            fontWeight="600"
+            letterSpacing="2.5"
+            fill="#E2E8F0"
+            textAnchor="middle"
+          >
+            DELIVERING TRUST
+          </text>
+
+          {/* Divider Arc */}
+          <path d="M 120 320 Q 200 340 280 320" fill="none" stroke="url(#citihomez-gold-gradient)" strokeWidth="2" strokeLinecap="round" />
         </svg>
       </div>
     );
   };
 
   const renderHorizontal = () => {
-    // Horizontal navigation header brand logo - adapts elegantly to dark backgrounds
-    // Using high contrast colors with high aesthetic curves and premium text placement
+    // Horizontal logo for headers, dark backgrounds
     return (
-      <div className={`flex items-center gap-3 select-none ${className}`}>
-        {/* Left Side: "MY 1" Rounded Block */}
-        <div className="shrink-0 relative" style={{ width: size ? (Number(size) * 1.5) : 56, height: size || 38 }}>
+      <div className={`flex items-center gap-3.5 select-none ${className}`}>
+        {/* Left emblem: Golden interlocking geometry */}
+        <div className="shrink-0 relative" style={{ width: size || 42, height: size || 42 }}>
           <svg
-            viewBox="0 0 125 85"
+            viewBox="0 0 100 100"
             className="w-full h-full"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {/* Soft border accent */}
-            <rect x="0" y="0" width="125" height="85" rx="16" fill="none" stroke={brickOrange} strokeWidth="3" />
-            
-            {/* Signature Filled Orange Brick Block */}
-            <rect x="5" y="5" width="115" height="75" rx="12" fill={brickOrange} />
-            
-            {/* Grid Brick Pattern Accent */}
-            <path d="M 15 35 L 110 35 M 15 55 L 110 55 M 40 5 L 40 35 M 80 5 L 80 35 M 60 35 L 60 55 M 30 55 L 30 80 M 85 55 L 85 80" 
-                  fill="none" stroke="#ffffff1a" strokeWidth="1.5" />
-            
-            {/* Bold Logotype Text inside Box */}
-            <text x="50" y="56" fontFamily="system-ui, -apple-system, sans-serif" fontSize="42" fontWeight="900" fill="#FFFFFF" textAnchor="middle">MY</text>
-            <text x="96" y="54" fontFamily="system-ui, -apple-system, sans-serif" fontSize="28" fontWeight="900" fill="#FDBA74" textAnchor="middle">1</text>
+            <defs>
+              <linearGradient id={`${goldGradientId}-horiz`} x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#FFF2D4" />
+                <stop offset="50%" stopColor="#DFBA6B" />
+                <stop offset="100%" stopColor="#9C7323" />
+              </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="46" fill="#0E0E0E" stroke="url(#citihomez-gold-gradient-horiz)" strokeWidth="2" />
+            {/* Elegant luxury 'C' housing outline */}
+            <path d="M 35 60 L 50 45 L 65 60 L 65 72 L 35 72 Z" fill="none" stroke="url(#citihomez-gold-gradient-horiz)" strokeWidth="2" />
+            <path d="M 30 52 L 50 32 L 70 52" fill="none" stroke="url(#citihomez-gold-gradient-horiz)" strokeWidth="3" strokeLinecap="round" />
+            <path d="M 62 48 A 12 12 0 1 0 62 68" fill="none" stroke="url(#citihomez-gold-gradient-horiz)" strokeWidth="3.5" />
           </svg>
         </div>
 
-        {/* Right Side: Logotype Text columns */}
+        {/* Right text stack */}
         <div className="flex flex-col text-left">
-          <div className="flex items-center gap-1 font-sans font-extrabold text-[15px] sm:text-[18px] tracking-wide leading-none">
-            <span style={{ color: brickOrange }} className="transition-colors duration-300">FIRSTBRICK</span>
-            <span className="text-white">INFRA</span>
+          <div className="flex items-center font-serif font-bold text-[18px] sm:text-[21px] tracking-wider leading-none text-white">
+            <span>CITI</span>
+            <span className="text-[#DFBA6B]">HOMEZ</span>
           </div>
           
-          <div className="text-[7.5px] sm:text-[9.2px] tracking-[0.14em] font-sans font-bold uppercase mt-1 leading-none">
-            <span className="text-gray-400">BUILD LEGACY </span>
-            <span style={{ color: brickOrange }}>BRICK BY BRICK</span>
+          <div className="text-[7.5px] sm:text-[8.5px] tracking-[0.16em] font-sans font-medium uppercase mt-1 leading-none text-gray-400">
+            CONNECTING DREAMS • DELIVERING TRUST
           </div>
         </div>
       </div>
@@ -123,21 +125,26 @@ export function Logo({ variant = 'horizontal', className = '', size }: LogoProps
   };
 
   const renderIconOnly = () => {
-    // A clean circular representation with solely the signature orange badge
     return (
       <div 
-        className={`flex items-center justify-center rounded-xl bg-orange-950/20 border border-orange-500/20 p-1.5 transition-all duration-300 ${className}`} 
+        className={`flex items-center justify-center rounded-xl bg-neutral-900 border border-[#DFBA6B]/20 p-1.5 transition-all duration-300 ${className}`} 
         style={{ width: size || 40, height: size || 40 }}
       >
         <svg
-          viewBox="0 0 125 85"
+          viewBox="0 0 100 100"
           className="w-full h-full"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <rect x="0" y="0" width="125" height="85" rx="16" fill="none" stroke={brickOrange} strokeWidth="3.5" />
-          <rect x="5" y="5" width="115" height="75" rx="12" fill={brickOrange} />
-          <text x="50" y="56" fontFamily="system-ui, -apple-system, sans-serif" fontSize="42" fontWeight="900" fill="#FFFFFF" textAnchor="middle">MY</text>
-          <text x="96" y="54" fontFamily="system-ui, -apple-system, sans-serif" fontSize="28" fontWeight="900" fill="#FDBA74" textAnchor="middle">1</text>
+          <defs>
+            <linearGradient id={`${goldGradientId}-icon`} x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#FFF2D4" />
+              <stop offset="50%" stopColor="#DFBA6B" />
+              <stop offset="100%" stopColor="#9C7323" />
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="46" fill="#0E0E0E" stroke="url(#citihomez-gold-gradient-icon)" strokeWidth="2" />
+          <path d="M 30 52 L 50 32 L 70 52" fill="none" stroke="url(#citihomez-gold-gradient-icon)" strokeWidth="3.5" strokeLinecap="round" />
+          <path d="M 62 48 A 12 12 0 1 0 62 68" fill="none" stroke="url(#citihomez-gold-gradient-icon)" strokeWidth="3.5" />
         </svg>
       </div>
     );

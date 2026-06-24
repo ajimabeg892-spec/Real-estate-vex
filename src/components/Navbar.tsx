@@ -37,8 +37,8 @@ export function Navbar() {
       <nav 
         className={`liquid-glass rounded-xl flex items-center justify-between transition-all duration-500 ${
           isScrolled 
-            ? 'px-6 py-3 bg-black/65 backdrop-blur-md border border-white/10' 
-            : 'px-4 py-2 bg-transparent'
+            ? 'px-6 py-3 bg-black/85 backdrop-blur-md border border-white/10 shadow-xl' 
+            : 'px-4 py-2 bg-transparent border border-transparent'
         }`}
       >
         {/* Brand Name Logo */}
@@ -50,21 +50,29 @@ export function Navbar() {
         </div>
 
         {/* Navigation Links */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-8">
+        <div className="hidden md:flex items-center gap-5 lg:gap-7">
           {[
             { name: 'Home', id: 'home' },
-            { name: 'Properties', id: 'properties' },
-            { name: 'About', id: 'about' },
+            { name: 'About Us', id: 'about' },
             { name: 'Services', id: 'services' },
+            { name: 'Properties', id: 'properties' },
+            { name: 'Rentals', id: 'properties' }, // Scrolls to the rentals section/tab
             { name: 'Contact', id: 'contact' }
           ].map((item) => (
             <button
               key={item.name}
-              onClick={() => scrollToSection(item.id)}
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer relative group py-1"
+              onClick={() => {
+                // If it's Rentals, let's also trigger an event or handle it gracefully
+                scrollToSection(item.id);
+                if (item.name === 'Rentals') {
+                  // Dispatch custom event to select the Rentals category automatically
+                  window.dispatchEvent(new CustomEvent('select-property-filter', { detail: 'Apartments & Flats' }));
+                }
+              }}
+              className="text-xs lg:text-sm font-medium text-gray-300 hover:text-[#DFBA6B] transition-colors duration-200 cursor-pointer relative group py-1"
             >
               {item.name}
-              <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-white transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#DFBA6B] transition-all duration-300 group-hover:w-full"></span>
             </button>
           ))}
         </div>
@@ -73,9 +81,9 @@ export function Navbar() {
         <div>
           <button 
             onClick={() => scrollToSection('contact')}
-            className="bg-white text-black px-5 py-2 rounded-lg text-xs md:text-sm font-medium hover:bg-gray-100 transition-colors duration-200 cursor-pointer shadow-lg active:scale-95"
+            className="bg-[#DFBA6B] text-black px-4 lg:px-5 py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-[#c59b3f] transition-all duration-300 cursor-pointer shadow-lg hover:scale-105 active:scale-95"
           >
-            Start a Chat
+            Enquire Now
           </button>
         </div>
       </nav>

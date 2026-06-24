@@ -57,30 +57,30 @@ export function Preloader({ isVideoReady, onAnimationComplete }: PreloaderProps)
       <div className="flex flex-col items-center max-w-sm w-full px-8 space-y-8">
         {/* Brand visual logotype */}
         <div className="flex flex-col items-center space-y-1">
-          <div className="text-2xl font-sans font-extrabold tracking-[0.1em] text-orange-500 overflow-hidden text-center">
-            <span className="block animate-pulse">MY FIRSTBRICK INFRA</span>
+          <div className="text-3xl font-serif font-extrabold tracking-[0.15em] text-[#DFBA6B] overflow-hidden text-center">
+            <span className="block animate-pulse">CITIHOMEZ</span>
           </div>
-          <span className="text-[10px] uppercase tracking-[0.25em] text-gray-500 font-mono font-light text-center">
-            INVEST IN LAND, BUILD WEALTH
+          <span className="text-[8px] uppercase tracking-[0.2em] text-gray-400 font-sans font-medium text-center">
+            CONNECTING DREAMS • CREATING OPPORTUNITIES • DELIVERING TRUST
           </span>
         </div>
 
         {/* Dynamic percentage counter */}
-        <div className="text-sm font-mono text-gray-400 font-light">
+        <div className="text-sm font-mono text-[#DFBA6B] font-light">
           {progress}%
         </div>
 
         {/* Minimalist raw line progress gauge matching VEX alignment */}
         <div className="w-48 h-[1.5px] bg-white/5 relative overflow-hidden rounded-full">
           <div
-            className="absolute left-0 top-0 bottom-0 bg-white transition-all duration-300 ease-out shadow-[0_0_8px_rgba(255,255,255,0.8)]"
+            className="absolute left-0 top-0 bottom-0 bg-[#DFBA6B] transition-all duration-300 ease-out shadow-[0_0_8px_rgba(223,186,107,0.8)]"
             style={{ width: `${progress}%` }}
           />
         </div>
 
         {/* Discretion protocol text */}
         <div className="text-[9px] uppercase tracking-[0.15em] text-gray-600 font-light text-center">
-          Establishing Secure Portal...
+          Establishing Premium Connection...
         </div>
       </div>
     </div>

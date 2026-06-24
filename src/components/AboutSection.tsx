@@ -44,13 +44,13 @@ export function AboutSection() {
       <div className="max-w-7xl mx-auto">
         {/* Intro Tagline */}
         <div className="mb-12">
-          <span className="text-xs uppercase tracking-[0.2em] font-medium text-gray-400 block mb-2">
-            THE ARCHITECTURE OF VALUE
+          <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#DFBA6B] block mb-2">
+            THE ARCHITECTURE OF TRUST
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-white mb-4">
-            Curating Space. Defining Legacy.
+            Connecting Dreams. Delivering Trust.
           </h2>
-          <div className="w-16 h-[1.5px] bg-white/40"></div>
+          <div className="w-16 h-[1.5px] bg-[#DFBA6B]/80"></div>
         </div>
 
         {/* Split Grid Column layout */}
@@ -63,34 +63,34 @@ export function AboutSection() {
             }`}
           >
             <p className="text-lg md:text-xl text-gray-300 font-light leading-relaxed">
-              Founded and led by premier property strategist and developer <strong>Rohan Sharma</strong>, <strong>MY FIRSTBRICK INFRA</strong> provides premium real estate investment opportunities including freehold plots, farmhouses, and residential projects in Noida, Greater Noida, and Delhi NCR.
+              Established in <strong>2013 in Bangalore</strong>, <strong>Citihomez</strong> is a trusted real estate advisory and agency company redefining property solutions through community, connection, and absolute transparency. We deliver premier residential and commercial services across India &amp; the UAE.
             </p>
             
             <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed">
-              Our core focus is delivering highly trusted property solutions, transparent dealings, and premium land parcels with rapid appreciation potential. Under Rohan Sharma's expert stewardship, we bridge the gap between high-yield investment structures and absolute legal trust, securing pristine assets for modern collectors.
+              In strategic collaboration with <strong>Alba Real Estate, Dubai</strong>, we bridge premier Indian assets with prime Middle Eastern portfolios. Whether it is an opulent residential villa in Hennur Road, Bangalore, an iconic sky-penthouse in Downtown Dubai, or Grade-A commercial workspace blocks in Delhi NCR, our teams operate with immaculate legal trust, local expertise, and gold-standard client care.
             </p>
 
             {/* Subtle Signature List Block */}
             <div className="grid grid-cols-2 gap-6 py-4">
-              <div className="border-l border-orange-500/40 pl-4">
-                <h4 className="text-sm font-medium text-white mb-1">Transparent Registry</h4>
-                <p className="text-xs text-gray-400 font-light leading-relaxed">Fully secure freehold titles, verified registries, and transparent, clear-cut pricing channels.</p>
+              <div className="border-l border-[#DFBA6B]/40 pl-4">
+                <h4 className="text-sm font-medium text-white mb-1">Global Synergy</h4>
+                <p className="text-xs text-gray-400 font-light leading-relaxed">Connecting premier Indian luxury markets with key high-yield assets in Dubai &amp; UAE.</p>
               </div>
-              <div className="border-l border-orange-500/40 pl-4">
-                <h4 className="text-sm font-medium text-white mb-1">Appreciation Nodes</h4>
-                <p className="text-xs text-gray-400 font-light leading-relaxed">Pristine plots strategically selected in Noida &amp; Greater Noida expansion sectors.</p>
+              <div className="border-l border-[#DFBA6B]/40 pl-4">
+                <h4 className="text-sm font-medium text-white mb-1">Elite Consultation</h4>
+                <p className="text-xs text-gray-400 font-light leading-relaxed">Transparent dealing, verified clear-title registrations, and tailored investment advisory.</p>
               </div>
             </div>
 
             {/* Elegant Founder Signoff */}
             <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <span className="text-[10px] uppercase tracking-widest text-[#D85924] font-mono block mb-1">FOUNDER &amp; OWNER</span>
-                <span className="text-lg font-serif font-semibold text-white tracking-wide">Rohan Sharma</span>
-                <span className="text-xs text-gray-400 block font-light">Principal Developer &amp; Property Specialist</span>
+                <span className="text-[10px] uppercase tracking-widest text-[#DFBA6B] font-mono block mb-1">OUR CORE ALLIANCE</span>
+                <span className="text-lg font-serif font-semibold text-white tracking-wide">Citihomez &amp; Alba Real Estate</span>
+                <span className="text-xs text-gray-400 block font-light">Redefining Properties across Bangalore &amp; Dubai</span>
               </div>
               <div className="italic text-gray-400 font-serif text-sm border-l border-white/10 pl-4 py-1 max-w-[320px] leading-relaxed">
-                "We don't just sell plots; we build wealth. Every brick, every coordinate represents a legacy for generations."
+                "Connecting dreams, creating opportunities, and delivering trust is not just our tagline—it is our absolute operating standard since 2013."
               </div>
             </div>
           </div>
@@ -116,8 +116,8 @@ export function AboutSection() {
                 
                 {/* Embedded luxury caption overlay */}
                 <div className="absolute bottom-6 left-6 right-6 p-4 bg-black/60 backdrop-blur-md rounded-xl border border-white/10">
-                  <span className="text-[10px] uppercase tracking-widest text-orange-400 font-mono block mb-1">CURATED FOCUS</span>
-                  <span className="text-sm font-light text-white">Lush Green Farmhouse Site, Greater Noida</span>
+                  <span className="text-[10px] uppercase tracking-widest text-[#DFBA6B] font-mono block mb-1">CROSS-BORDER PORTFOLIO</span>
+                  <span className="text-sm font-light text-white">Bangalore | Dubai | Delhi NCR</span>
                 </div>
               </div>
             </div>

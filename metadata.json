@@ -1,6 +1,6 @@
 {
-  "name": "MY FIRSTBRICK INFRA",
-  "description": "High-fidelity website for MY FIRSTBRICK INFRA featuring premium freehold plots, farmhouses and land investments in Noida, Greater Noida and Delhi NCR.",
+  "name": "Citihomez",
+  "description": "Premium luxury real estate website for Citihomez featuring bespoke villas, high-rise apartments, and grade-A commercial layouts across India and UAE.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

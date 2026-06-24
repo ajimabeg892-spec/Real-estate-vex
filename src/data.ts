@@ -1,137 +1,148 @@
-import { Property, Service, Stat, Testimonial } from './types';
+import { Property, Stat, Testimonial, Service } from './types';
 
 export const PROPERTIES: Property[] = [
   {
     id: 'prop-1',
-    title: 'The Gold Crest Plots',
-    location: 'Sector 150, Noida',
-    price: '₹1.25 Crore onwards',
-    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80',
-    beds: 0,
-    baths: 0,
-    sqft: 2250, // 250 Sq Yd
-    tag: 'Premium Freehold Plots',
-    description: 'Bespoke freehold residential plots in Sector 150, Noida. Designed with wide arterial roads, deep landscape buffers, high security, and high appreciation lanes.'
+    title: 'The Sovereign Crest Villa',
+    location: 'Hennur Road, Bangalore, India',
+    price: '₹4.50 Crore onwards',
+    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80',
+    beds: 5,
+    baths: 6,
+    sqft: 5200, // 5200 Sq Ft
+    tag: 'Luxury Villas',
+    description: 'An architectural marvel located in Hennur Road, Bangalore. Features a private glass elevator, customizable home theatre, automated home-iot decks, and continuous verdant views.'
   },
   {
     id: 'prop-2',
-    title: 'The Whispering Farmhouses',
-    location: 'Greater Noida Expressway',
-    price: '₹2.80 Crore',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
-    beds: 4,
-    baths: 4.5,
-    sqft: 9000, // 1000 Sq Yd
-    tag: 'Farmhouse Projects',
-    description: 'An elite reserve of pre-curated green estate blocks. Each comes with custom perimeter trees, smart soil management, deep water connections, and customized retreat houses.'
+    title: 'The Marina Horizon Sky-Suites',
+    location: 'Dubai Marina, UAE (Alba Collaboration)',
+    price: '₹12.80 Crore (AED 5.6M)',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
+    beds: 3,
+    baths: 3.5,
+    sqft: 2850,
+    tag: 'Apartments & Flats',
+    description: 'Superb high-rise residences overlooking the Arabian Gulf. Curated in collaboration with Alba Real Estate, Dubai, featuring custom Italian marble accents and smart climate boundaries.'
   },
   {
     id: 'prop-3',
-    title: 'Aether Brick Boulevard',
-    location: 'Delhi NCR, Yamuna Expressway',
-    price: '₹12,500 per sq yd',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
+    title: 'Nirvana Corporate Hub',
+    location: 'Sector 62, Noida, Delhi NCR',
+    price: '₹8.40 Lakhs/month rent',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
     beds: 0,
     baths: 0,
-    sqft: 4500, // 500 Sq Yd
-    tag: 'Strategic Land Investment',
-    description: 'Premium freehold land plots situated near the upcoming Noida International Airport. High liquidity, rapid developmental trajectory, and immediate registry options.'
+    sqft: 12000,
+    tag: 'Commercial Spaces',
+    description: 'Premium fully loaded commercial space featuring high-speed elevator arrays, double-height executive boardrooms, absolute redundant power backups, and private cafeteria sectors.'
   },
   {
     id: 'prop-4',
-    title: 'Royal Brick Horizon Suites',
-    location: 'Sector 143, Noida',
-    price: '₹85 Lakhs',
+    title: 'Alba Sanctuary Penthouse',
+    location: 'Downtown Dubai, UAE',
+    price: '₹24.00 Crore (AED 10.5M)',
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
-    beds: 3,
-    baths: 3,
-    sqft: 1850,
-    tag: 'Residential Apartments',
-    description: 'Exquisite ultra-premium apartments featuring expansive private sun-decks, integrated smart lighting controls, modular Italian layouts, and continuous security.'
+    beds: 4,
+    baths: 5,
+    sqft: 6100,
+    tag: 'Investment Opportunities',
+    description: 'Pristine penthouse in Downtown Dubai. Panoramic Burj Khalifa views, triple-glazed acoustics, temperature-controlled indoor-outdoor pool, and high appreciation yield profile.'
   }
 ];
 
 export const SERVICES: Service[] = [
   {
     id: 'service-1',
-    title: 'Premium Freehold Plots',
-    description: 'Exclusive, highly appreciated freehold land packages inside secured premium clusters in Noida and Greater Noida with immediate registry.',
-    iconName: 'Compass'
+    title: 'Luxury Villas',
+    description: 'Bespoke custom-designed independent villas and royal mansions featuring curated layouts in premium sectors of Bangalore and Dubai.',
+    iconName: 'Home'
   },
   {
     id: 'service-2',
-    title: 'Farmhouse Projects',
-    description: 'Elite layout planning, terrain sculpting, and customized development of sprawling luxury farmhouses and rural retreat estates in scenic margins of Delhi NCR.',
-    iconName: 'ArrowUpRight'
+    title: 'Apartments & Flats',
+    description: 'High-end multi-tier condominiums, builder-floors, and penthouses integrated with automated systems and top-tier amenities.',
+    iconName: 'Building'
   },
   {
     id: 'service-3',
-    title: 'Residential Apartments',
-    description: 'Curated premium high-rise residences and custom luxury builder floors with high-end specifications and top-tier amenities.',
-    iconName: 'TrendingUp'
+    title: 'Commercial Spaces',
+    description: 'Redundant power Grade-A IT offices, corporate showrooms, and commercial retail setups across prime financial corridors.',
+    iconName: 'Briefcase'
   },
   {
     id: 'service-4',
-    title: 'Land Investment',
-    description: 'Strategic market research, bulk plot acquisitions, and reliable legal advisory to secure high-yield land parcels near high-growth transport hubs.',
-    iconName: 'Shield'
+    title: 'Property Buying & Selling',
+    description: 'Zero-hassle legally verified property transfer advisory, full paper registries, and transparent pricing structures.',
+    iconName: 'Compass'
+  },
+  {
+    id: 'service-5',
+    title: 'Property Rentals',
+    description: 'Direct elite landlord rental agreements, comprehensive security checks, and corporate leasing assistance.',
+    iconName: 'Key'
+  },
+  {
+    id: 'service-6',
+    title: 'Real Estate Consultation',
+    description: 'Strategic deployment of private capital assets, legal verification checks, and market liquidity assessments.',
+    iconName: 'TrendingUp'
   }
 ];
 
 export const STATS: Stat[] = [
   {
     id: 'stat-1',
-    value: 1200,
+    value: 1250,
     suffix: '+',
-    label: 'Acres Developed'
+    label: 'Properties Delivered'
   },
   {
     id: 'stat-2',
-    value: 2500,
-    suffix: '+',
-    label: 'Happy Investors'
+    value: 15,
+    suffix: 'B+',
+    label: 'Asset Transactions (₹)'
   },
   {
     id: 'stat-3',
-    value: 12,
+    value: 13,
     suffix: '+',
-    label: 'Years of Trust'
+    label: 'Years of Trust (Since 2013)'
   },
   {
     id: 'stat-4',
-    value: 950,
-    suffix: 'Cr+',
-    label: 'Portfolio Valuation'
+    value: 2,
+    suffix: ' Countries',
+    label: 'India & UAE Presence'
   }
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 'test-1',
-    name: 'Rajesh Malhotra',
-    role: 'Managing Director',
-    company: 'Malhotra Group',
-    content: 'MY FIRSTBRICK INFRA approaches land investment with absolute transparency. Their level of legal diligence is exceptional; they did not just show us a plot, they guaranteed title security and smooth registries in Sector 150.',
+    name: 'Rajesh Ramakrishnan',
+    role: 'Founder',
+    company: 'Fintech Partners',
+    content: 'Citihomez redefined our entire home buying experience. From selecting a bespoke luxury villa on Hennur Road to obtaining bank approvals, their transparency and dedication were absolute.',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80',
     rating: 5
   },
   {
     id: 'test-2',
-    name: 'Dr. Ananya Sharma',
-    role: 'Senior Consultant',
-    company: 'Max Healthcare',
-    content: 'Acquiring an elite farmhouse plot in Delhi NCR was completely transparent. Under MY FIRSTBRICK INFRA’s expert guidance, every milestone of registry and power deployment was executed ahead of schedule.',
+    name: 'Sarah Al-Mansoori',
+    role: 'Investment Director',
+    company: 'Capital Crescent Dubai',
+    content: 'The collaboration between Citihomez and Alba Real Estate is seamless. They structured our cross-border real estate investment pipeline with deep strategic intelligence and immaculate professional care.',
     avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80',
     rating: 5
   },
   {
     id: 'test-3',
-    name: 'Amit Chaudhary',
-    role: 'NRI Investor',
-    company: 'Chaudhary Capital UK',
-    content: 'Superb advisory. They helped me structure my land investment near Noida International Airport Expressway with extreme precision. The appreciation potential here is truly massive.',
+    name: 'Anuj Gupta',
+    role: 'NRI Venture Investor',
+    company: 'Inventure Corp',
+    content: 'We acquired prime corporate commercial spaces through Citihomez. Their deep research, clear pricing channels, and instant response make them the finest real estate advisory firm in Bangalore.',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150&q=80',
     rating: 5
   }
 ];
-
